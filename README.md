@@ -1,1 +1,1 @@
-O 
+O jogador, olha o veyon jogador!
