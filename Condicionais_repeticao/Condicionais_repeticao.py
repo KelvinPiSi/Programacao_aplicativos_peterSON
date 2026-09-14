@@ -49,19 +49,22 @@ for nome in reversed(nomes):
 ## I'm gonna give ya a Break, then Continue and maybe Pass
 
 for numero in range(1,11):
-
-
+    print("Break")
     if numero == 6:
         numero += 1
         break
 
+    print("Continue")
     print(numero)
     if numero == 6:
         numero += 1
         continue
 
+    print("Pass")
     print(numero)
     if numero == 6:
         numero += 1
         pass
     print(numero)
+
+
