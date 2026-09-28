@@ -45,3 +45,66 @@ print(f"His time was : {my_time[0]}")
 Axl_Low = {"nome": "Axl Low", "idade ": 23}
 
 print(f"He was : {Axl_Low["nome"]}")
+
+# len() informa a quantidade de elementos
+print(len(origin))
+
+# Percorrendo uma lista
+for nome in origin:
+    print(nome)
+
+# Verificando se um elemento existe
+if "London" in origin:
+    print("British Guy!")
+else:
+    print("Incorrect - loud buzz!")
+
+# Lista com Diferentes tipos de dados
+dados = ["Axl Low", 23, 1.79, True]
+print(dados)
+
+# Lista de números
+notas = [7.5, 8, 6.5, 9]
+soma = 0
+
+for nota in notas:
+    soma += nota
+
+media = soma / len(notas)
+print(f"Média: {media:.1f}")
+
+
+# Tuplas
+# Tuplas são semelhantes às listas
+# A principal diferença é que tuplas não podem
+# ser alteradas depois de criadas
+
+coordenadas = (10,20)
+print(coordenadas)
+
+# Acessando os elementos
+print(coordenadas[0])
+print(coordenadas[1])
+
+
+# Dicionários
+# Armazena informações no formato:
+# chave: valor
+
+aluno = {
+    "nome": "Kelvin",
+    "idade": 17,
+    "nota": 9.5
+}
+
+print(aluno)
+
+# Acessando os valores
+print(aluno["nome"])
+print(aluno["idade"])
+print(aluno["nota"])
+
+# Alterando os valores
+
+aluno["nota"] = 9
+print(aluno)
