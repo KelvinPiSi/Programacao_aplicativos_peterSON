@@ -20,11 +20,10 @@ class Cart:
         return total_purchase
 
     def show(self):
-        # Exibe a lista de produtos com subtotal e o total geral
         print("=== Purchase extract ===")
         for produto in self.item_list:
             print(
-                f"- {produto.name} (Qtd: {produto.quantity} | Un: R$ {produto.price:.2f}) -> Subtotal: R$ {produto.subtotal():.2f}"
+                f"- {produto.name} (Qtd: {produto.quantity} | Un: R$ {produto.price:.2f}) -> Total: R$ {produto.subtotal():.2f}"
             )
         print("-" * 40)
         print(f"Total Purchase: R$ {self.total():.2f}")

@@ -9,10 +9,7 @@ class Cachorro:
         print(f"{self.nome} Au Au!")
     def mostrar_dados(self):
         print(f"Nome -- {self.nome} -- Raça -- {self.raca} -- Idade -- {self.idade}")
-    def correcao_dados(self):
-        if self.idade < 8:
-            self.idade += -1
-            print(f"Nova idade é {self.idade}")
+
 cachorro1 = Cachorro("Romeo", "Husky Siberiano", idade= 7)
 cachorro2 = Cachorro("Delilah", "Pastor Alemão", idade= 4)
 
@@ -22,5 +19,7 @@ cachorro1.mostrar_dados()
 cachorro2.latir()
 cachorro2.mostrar_dados()
 
-cachorro2.correcao_dados()
+print("Correção de dados...")
+cachorro2.idade = 2
+cachorro2.mostrar_dados()
 
