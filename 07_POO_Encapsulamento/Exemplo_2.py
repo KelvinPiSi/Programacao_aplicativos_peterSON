@@ -1,6 +1,4 @@
-#1. Encapsulamento --> Proteger 0 salário para que só mude seguindo regras(métodos)
-
-
+#1. Encapsulamento -≥ Proteger 0 salário para que só mude seguindo regras(métodos)
 class Funcionario:
     def __init__(self, nome, salario):
         self.nome = nome
