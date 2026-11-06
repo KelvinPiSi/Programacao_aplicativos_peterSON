@@ -1,6 +1,4 @@
 import sys
-
-
 class Funcionario:
     def __init__(self, nome, salario):
         self.nome = nome
@@ -23,6 +21,8 @@ class Funcionario:
         self.__salario = self.__salario * (1 + porcentagem/100)
         print(f"{self.nome} recebeu {porcentagem}% de aumento.\n"
               f"Salário atual é R${self.__salario:.2f}")
+    def bonus(self):
+        return self.salario * 0.1
 
     @salario.setter
     def salario(self, value):
@@ -63,12 +63,15 @@ class  Gerente(Funcionario):
             super().__init__(nome,salario) # Chama o construtor da classe Mãe
             self.equipe = equipe
             self.integrantes = []
-        def demissão(self,demissao):
+        def demissao(self,demissao):
             self.equipe =- demissao
         def mostrar_equipe (self,integrantes):
             self.integrantes.append(integrantes)
             print(f'{self.nome}gerencia indiretamente {self.equipe}')
             print(f'{self.nome} gerencia {self.integrantes}')
+
+        def bonus(self):
+            return self.salario * 0.20
 
 Chefe1 = Gerente("Marcio", 12000.00, equipe=50)
 Chefe1.mostrar_equipe(f"{pj1.nome,pj2.nome,pj3.nome}")
@@ -80,6 +83,8 @@ class Estagiario(Funcionario):
     def pedir_demissao(self):
         print(f'{self.nome} pediu demissão')
         sys.exit()
+    def bonus(self):
+        return  200
 
 estagiario1 = Estagiario("Thiago",1700, "Técnico em Internet")
 
@@ -89,5 +94,18 @@ estagiario1.apresentar()
 
 estagiario1.aumento(5)
 
-estagiario1.pedir_demissao()
+# Polimorfismo
 
+print("\nPolimorfismo\nExemplos de objetos reagindo diferentemente aos mesmos metodos")
+
+grupo = [Funcionario("Gabriel", salario=2800),Gerente("João", salario=7500, equipe=6)
+          ,Estagiario("Jonathan", salario=1600, curso="Modelagem de Sistemas")]
+
+for funcionario in grupo:
+    print(f"{funcionario.nome}: R$ {funcionario.bonus()}")
+
+"""""
+1. Criamos uma lista chamada equipe com funcionarios de classes diferentes,
+2. Isso resultou em cada um dos objetos reagindo de maneira diferente ao mesmo método.
+3. Usamos funcionario.bonus() e cada classs executou seu próprio cálculo.
+"""""
